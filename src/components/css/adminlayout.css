@@ -1,0 +1,30 @@
+.admin-layout-container{
+    display: flex;
+}
+.admin-sidebar{
+    width: 30%;
+}
+.admin-main{
+    width: 70%;
+}
+.admin-list-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+}
+.admin-list{
+    margin: 10px 40px;
+}
+.admin-links{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    border: 1px solid #ece6e6;
+    background-color: #ece6e6;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+
+}

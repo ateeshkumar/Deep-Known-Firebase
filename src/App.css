@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.l-n-btn{
+    margin: 20px;
+    border: none;
+    background: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #10ff04;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color:#000;
+    cursor: pointer;
+}

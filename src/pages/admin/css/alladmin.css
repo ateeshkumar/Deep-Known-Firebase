@@ -1,0 +1,17 @@
+.internship-form-contaner{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.internship-form-contaner input,textarea{
+    outline: none;
+    font-size: 18px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+input[type='submit']{
+    background-color: aqua;
+    cursor: pointer;
+}

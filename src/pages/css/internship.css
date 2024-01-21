@@ -1,0 +1,26 @@
+.details-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+.left-details{
+    width: 70%;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    border-radius: 5px;
+}
