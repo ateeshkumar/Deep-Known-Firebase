@@ -2,4 +2,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    color: white;
+}
+.left-internship-content{
+    width: 70%;
+    padding: 20px 80px;
+}
+.card-title{
+    font-size: 35px;
+    margin: 20px 10px;
+}
+.card-head-container{
+    width: 100%;
+    background-image:linear-gradient(to right, rgb(111, 222, 122) , rgb(199, 199, 121));
+    color: black;
+    font-size: 34px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px 20px;
+    text-decoration: underline;
+    margin: 10px;
+}
+.right-internship-content{
+    width: 30%;
+}
+.card-details{
+    margin: 20px 10px;
+    font-size: 25px;
+}
+.card-description{
+    margin: 20px 10px;
+    font-size: 22px;
+}
+.internship-link{
+    font-size: 25px;
+    margin: 20px 10px;
+}
+.internship-link>a{
+    color: blue;
+    text-decoration: underline;
 }

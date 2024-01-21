@@ -33,7 +33,7 @@ const Internship = () => {
                     <button
                       className="l-n-btn"
                       style={{ backgroundColor: "" }}
-                      onClick={() => navigate(`/internship/${item.slug}`)}
+                      onClick={() => navigate(`/internship/${item.id}`)}
                     >
                       Open
                     </button>

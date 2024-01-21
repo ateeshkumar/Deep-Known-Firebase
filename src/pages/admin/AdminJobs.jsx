@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { Timestamp, addDoc, collection } from "firebase/firestore";
 import Layout from "../../components/Layout";
 import { db, auth } from "../../fireBase/config";
 import AdminLayout from "../../components/AdminLayout";
@@ -32,8 +32,9 @@ const AdminJobs = () => {
         expriences,
         stipend,
         remote,
+        time: Timestamp.now(),
       });
-      navigate("/account/admin/internship");
+      navigate("/account/admin/jobs");
     } catch (error) {
       console.log(error);
     }
@@ -48,12 +49,14 @@ const AdminJobs = () => {
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              required
             />
             <input
               type="text"
               placeholder="Job Profile"
               value={profile}
               onChange={(e) => setProfile(e.target.value)}
+              required
             />
             <textarea
               name="text"
@@ -97,7 +100,7 @@ const AdminJobs = () => {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
-            <input type="submit" />
+            <input type="submit" placeholder="Text" />
           </form>
         </AdminLayout>
       </Layout>

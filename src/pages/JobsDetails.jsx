@@ -15,13 +15,13 @@ import {
 import "./css/internshipdetails.css";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
-const IntershipDetails = () => {
+const JobsDetails = () => {
   const { slug } = useParams();
   const [postLists, setPostList] = useState();
-  const postsCollectionRef = collection(db, "internship");
+  const postsCollectionRef = collection(db, "jobs");
   const getInternshipData = async () => {
     const data = await getDocs(postsCollectionRef);
-    const productTemp = await getDoc(doc(db, "internship", slug));
+    const productTemp = await getDoc(doc(db, "jobs", slug));
     setPostList(productTemp.data());
   };
   useEffect(() => {
@@ -30,10 +30,10 @@ const IntershipDetails = () => {
   console.log(postLists);
   return (
     <div>
-      <Layout title={"Deep Known-internship"}>
+      <Layout title={"Deep Known- Jobs"}>
         <div className="internship-container">
           <div className="left-internship-content">
-            <h1 className="internship-heading">Internship Details</h1>
+            <h1 className="internship-heading">Jobs Details</h1>
             {postLists ? (
               <div className="card-content-constiner">
                 <div className="card-head-container">Title</div>
@@ -78,4 +78,4 @@ const IntershipDetails = () => {
   );
 };
 
-export default IntershipDetails;
+export default JobsDetails;

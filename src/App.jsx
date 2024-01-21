@@ -11,6 +11,9 @@ import AdminInternship from "./pages/admin/AdminInternship";
 import Privacy from "./pages/Privacy";
 import TermCondition from "./pages/TermCondition";
 import Internship from "./pages/Internship";
+import AdminJobs from "./pages/admin/AdminJobs";
+import JobsDetails from "./pages/JobsDetails";
+import AdminMovies from "./pages/admin/AdminMovies";
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
         <Route path="/internship" element={<Internship />} />
         <Route path="/internship/:slug" element={<IntershipDetails />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/:slug" element={<JobsDetails />} />
         <Route path="/new-movies" element={<NewMovies />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/privacy-policy" element={<Privacy />} />
@@ -27,6 +31,8 @@ function App() {
         //admin access
         <Route path="/account/admin" element={<AdminDashord />} />
         <Route path="/account/admin/internship" element={<AdminInternship />} />
+        <Route path="/account/admin/jobs" element={<AdminJobs />} />
+        <Route path="/account/admin/movies" element={<AdminMovies />} />
       </Routes>
     </>
   );
