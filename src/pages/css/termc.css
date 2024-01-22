@@ -1,0 +1,18 @@
+.term-container{
+    background-color: black;
+    padding: 10px 10%;
+    color: white;
+}
+.term-head{
+    color: #fdfd13;
+    font-size: 35px;
+}
+.term-para{
+    font-size: 18px;
+    margin: 10px;
+}
+.term-head-1{
+    font-size: 24px;
+    margin: 10px;
+    text-decoration: underline;
+}

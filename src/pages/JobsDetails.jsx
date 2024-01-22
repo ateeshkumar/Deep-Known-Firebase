@@ -59,10 +59,7 @@ const JobsDetails = () => {
                 <div className="card-head-container">Click to Apply</div>
                 <sapn className="internship-link">
                   Click Here To Apply:{" "}
-                  <a
-                    href="https://www.devknus.com/course/tutorialreactblog/reactblog/4"
-                    target="_balnk"
-                  >
+                  <a href={postLists.link} target="_balnk">
                     Click Here
                   </a>
                 </sapn>

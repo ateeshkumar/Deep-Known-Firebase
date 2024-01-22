@@ -6,6 +6,8 @@ import AdminLayout from "../../components/AdminLayout";
 import "./css/alladmin.css";
 import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
+import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
 const AdminJobs = () => {
   const [title, setTitle] = useState("");
   const [profile, setProfile] = useState("");
@@ -16,11 +18,13 @@ const AdminJobs = () => {
   const [stipend, setStipend] = useState("");
   const [remote, setRemote] = useState("");
   const [link, setLink] = useState("");
+  const [loader, setLoader] = useState(false);
   const postCollectionRef = collection(db, "jobs");
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
       await addDoc(postCollectionRef, {
         title,
@@ -32,8 +36,11 @@ const AdminJobs = () => {
         expriences,
         stipend,
         remote,
+        link,
         time: Timestamp.now(),
       });
+      setLoader(false);
+      toast.success("Job Posted SuccessFully");
       navigate("/account/admin/jobs");
     } catch (error) {
       console.log(error);
@@ -100,7 +107,9 @@ const AdminJobs = () => {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
-            <input type="submit" placeholder="Text" />
+            <button className="l-n-btn" type="submit">
+              {loader ? <Loader /> : "Submit"}
+            </button>
           </form>
         </AdminLayout>
       </Layout>

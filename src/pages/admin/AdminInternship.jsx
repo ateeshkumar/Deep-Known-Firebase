@@ -6,6 +6,8 @@ import AdminLayout from "../../components/AdminLayout";
 import "./css/alladmin.css";
 import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
+import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
 const AdminInternship = () => {
   const [title, setTitle] = useState("");
   const [profile, setProfile] = useState("");
@@ -17,10 +19,12 @@ const AdminInternship = () => {
   const [remote, setRemote] = useState("");
   const [link, setLink] = useState("");
   const postCollectionRef = collection(db, "internship");
+  const [loader, setLoader] = useState(false);
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
       await addDoc(postCollectionRef, {
         title,
@@ -35,6 +39,8 @@ const AdminInternship = () => {
         link,
         time: Timestamp.now(),
       });
+      setLoader(false);
+      toast.success("Job Posted successfully");
       navigate("/account/admin/internship");
     } catch (error) {
       console.log(error);
@@ -101,7 +107,9 @@ const AdminInternship = () => {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
-            <input type="submit" placeholder="Text" />
+            <button className="l-n-btn" type="submit">
+              {loader ? <Loader /> : "Submit"}
+            </button>
           </form>
         </AdminLayout>
       </Layout>
