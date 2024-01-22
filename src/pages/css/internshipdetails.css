@@ -43,3 +43,26 @@
     color: blue;
     text-decoration: underline;
 }
+@media screen and (max-width:1200px){
+    .right-internship-content{
+    display: none;
+}
+.left-internship-content{
+    width: 100%;
+    padding: 20px 80px;
+}
+}
+@media screen and (max-width:600px){
+    .card-head-container{
+        font-size: 26px;
+    }
+}
+@media screen and (max-width:480px){
+    .left-internship-content{
+    width: 100%;
+    padding: 20px 20px;
+}
+.card-title{
+font-size: 30px;
+}
+}

@@ -125,10 +125,7 @@ const Footer = () => {
         </div>
         <div className="lower-footer-container">
           <p>deepknown.online&copy;2024</p>
-          <ul
-            className="list-f-container-bootom"
-            style={{ flexDirection: "row" }}
-          >
+          <ul className="list-f-container-bootom">
             <li className="f-list">
               <Link to="" className="f-list-a">
                 <FaWhatsappSquare color="green" fontSize={"30px"} />

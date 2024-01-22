@@ -1,22 +1,22 @@
-.navbar-container{
+.navbar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background: #171428;
 }
-.navbar-logo{
+.navbar-logo {
     width: 12%;
 }
-.nabar-list-container{
+.nabar-list-container {
     display: flex;
     list-style: none;
     padding: 0;
     align-items: center;
 }
-.navabr-list{
+.navabr-list {
     margin: 2px;
-    padding: 10px 10px;
+    padding: 10px;
 }
 /* .navabr-list:hover{
     border: 2px solid white;
@@ -24,7 +24,7 @@
     background: #fff;
     
 } */
-.navbar-link{
+.navbar-link {
     text-decoration: none;
     font-size: 20px;
     color: #fff;
@@ -32,18 +32,18 @@
 /* .navbar-link:hover{
      color: #171428; 
 } */
-.profile-popup-window{
+.profile-popup-window {
     list-style: none;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
 }
-.profile-popup-window-list{
+.profile-popup-window-list {
     border-bottom: 1px solid #ffffff96;
     padding: 10px;
 }
-.profile-popup-window-list-btn{
+.profile-popup-window-list-btn {
     display: inline;
     cursor: pointer;
     align-items: center;
@@ -52,10 +52,57 @@
     background: none;
     border: none;
 }
-.profile-btn-setting{
+.profile-btn-setting {
     font-size: 18px;
     color: #fff;
     background: none;
     border: none;
     cursor: pointer;
+}
+.nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+}
+@media only screen and (max-width: 1024px) {
+    .nav-btn {
+        visibility: visible;
+        opacity: 1;
+    }
+    .nabar-list-container {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: #171428;
+        transition: 1s;
+        
+    }
+    .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+    .responsive_nav {
+		transform: translateY(100vh);
+        padding: 20px;
+	}
+
+}
+@media screen and (max-width:870px){
+    .navbar-logo {
+    width: 20%;
+}
 }
