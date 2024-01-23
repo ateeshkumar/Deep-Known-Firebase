@@ -43,19 +43,19 @@ const Navbar = () => {
           </li>
           <li className="navabr-list">
             <Link to="/internship" className="navbar-link">
-              Intership Job
+              Internship Jobs
             </Link>
           </li>
           <li className="navabr-list">
             <Link to="/jobs" className="navbar-link">
-              Fresher Job
+              Fresher Jobs
             </Link>
           </li>
-          <li className="navabr-list">
+          {/* <li className="navabr-list">
             <Link to="/new-movies" className="navbar-link">
               New Movies
             </Link>
-          </li>
+          </li> */}
           <li className="navabr-list">
             <Link to="/movies" className="navbar-link">
               Movies

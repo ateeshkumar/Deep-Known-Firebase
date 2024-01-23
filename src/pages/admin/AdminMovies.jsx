@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
-import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Layout from "../../components/Layout";
 import { db, auth, storage } from "../../fireBase/config";
 import AdminLayout from "../../components/AdminLayout";
@@ -21,56 +21,42 @@ const AdminMovies = () => {
   // });
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
+  const [content, setContent] = useState("");
 
-  const [loader, Setloader] = useState(false);
+  const [loader, setloader] = useState(false);
   const [thumbnail, setThumbnail] = useState();
-  // console.log(thumbnail);
   const postCollectionRef = collection(db, "movies");
   const navigate = useNavigate();
+  const uploadImage = (e) => {
+    setloader(true);
+    if (!thumbnail) return;
+    e.preventDefault();
 
-  const addPost = async () => {
-    // if (
-    //   blogs.title === "" ||
-    //   blogs.category === "" ||
-    //   blogs.content === "" ||
-    //   blogs.thumbnail === ""
-    // ) {
-    //   toast.warn("Please Fill All Fields");
-    // }
-    // console.log(blogs.content);
-    uploadImage();
-    Setloader(false);
-  };
-
-  const uploadImage = () => {
-    // if (!thumbnail) return;
-    Setloader(true);
-    const imageRef = ref(storage, `blogimage`);
-    console.log(imageRef);
-    // uploadBytes(imageRef, thumbnail).then((snapshot) => {
-    // getDownloadURL(snapshot.ref).then((url) => {
-    //   console.log(url);
-    const productRef = collection(db, "movies");
-    try {
-      addDoc(productRef, {
-        title,
-        link,
-        url,
-        time: Timestamp.now(),
-        date: new Date().toLocaleString("en-US", {
-          month: "short",
-          day: "2-digit",
-          year: "numeric",
-        }),
+    const imageRef = ref(storage, `blogimage/${thumbnail.name}`);
+    uploadBytes(imageRef, thumbnail).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        try {
+          addDoc(postCollectionRef, {
+            title,
+            link,
+            url,
+            content,
+            time: Timestamp.now(),
+            date: new Date().toLocaleString("en-US", {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            }),
+          });
+          navigate("/account/admin/");
+          setloader(false);
+          toast.success("Post Added Successfully");
+        } catch (error) {
+          toast.error(error);
+          console.log(error);
+        }
       });
-      navigate("/account/admin/");
-      toast.success("Post Added Successfully");
-    } catch (error) {
-      toast.error(error);
-      console.log(error);
-    }
-    // });
-    // });
+    });
   };
   const [text, settext] = useState("");
 
@@ -81,7 +67,7 @@ const AdminMovies = () => {
     <div>
       <Layout>
         <AdminLayout>
-          <form onSubmit={addPost} className="internship-form-contaner">
+          <form onSubmit={uploadImage} className="internship-form-contaner">
             <input
               type="text"
               placeholder="Enter Your Title"
@@ -106,11 +92,11 @@ const AdminMovies = () => {
             <Editor
               apiKey="2yo7fjto3bfr6ggodipq1he07efadq9cmailfmn9inm75c6t"
               onEditorChange={(newValue, editor) => {
-                // setBlogs({ ...blogs, content: newValue });
-                // settext(editor.getContent({ format: "text" }));
+                setContent(newValue);
+                settext(editor.getContent({ format: "text" }));
               }}
               onInit={(evt, editor) => {
-                // settext(editor.getContent({ format: "text" }));
+                settext(editor.getContent({ format: "text" }));
               }}
               init={{
                 height: 500,
@@ -137,11 +123,10 @@ const AdminMovies = () => {
               }}
             />
             {/* Five Submit Button  */}
-            <button className="l-n-btn" type="submin">
+            <button className="l-n-btn" type="submit">
               {loader ? <Loader /> : "Submit"}
             </button>
           </form>
-
           {/* <div className="">
             <h1 className=" text-center mb-3 text-2xl">Preview</h1>
             <div className="content">

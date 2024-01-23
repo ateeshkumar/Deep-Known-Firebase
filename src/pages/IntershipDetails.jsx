@@ -27,7 +27,6 @@ const IntershipDetails = () => {
   useEffect(() => {
     getInternshipData();
   }, []);
-  console.log(postLists);
   return (
     <div>
       <Layout title={"Deep Known-internship"}>

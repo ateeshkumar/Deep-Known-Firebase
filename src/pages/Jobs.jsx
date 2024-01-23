@@ -29,7 +29,9 @@ const Jobs = () => {
                     <h4 className="card-info">{item.profile}</h4>
                     <h4 className="card-info">{item.expriences}</h4>
                     <h4 className="card-info">{item.stipend}</h4>
-                    <h4 className="card-info">{item.location}</h4>
+                    <h4 className="card-info">
+                      {item.time.toDate().toDateString()}
+                    </h4>
                     <button
                       className="l-n-btn"
                       style={{ backgroundColor: "" }}

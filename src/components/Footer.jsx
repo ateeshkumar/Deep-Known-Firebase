@@ -27,11 +27,11 @@ const Footer = () => {
                 Jobs
               </Link>
             </li>
-            <li className="f-list">
+            {/* <li className="f-list">
               <Link to="new-movies" className="f-list-a">
                 New Movies
               </Link>
-            </li>
+            </li> */}
             <li className="f-list">
               <Link to="/movies" className="f-list-a">
                 Movies
@@ -40,7 +40,10 @@ const Footer = () => {
           </ul>
           <ul className="list-f-container">
             <li className="f-list">
-              <Link to="" className="f-list-a">
+              <Link
+                to="https://t.me/fresher_internship_jobs"
+                className="f-list-a"
+              >
                 <FaTelegram
                   color="#099284"
                   fontSize={"30px"}
@@ -50,7 +53,10 @@ const Footer = () => {
               </Link>
             </li>
             <li className="f-list">
-              <Link to="" className="f-list-a">
+              <Link
+                to="https://t.me/fresher_internship_jobs"
+                className="f-list-a"
+              >
                 <FaTelegram
                   color="#099284"
                   fontSize={"30px"}
@@ -59,7 +65,7 @@ const Footer = () => {
                 Jobs Telegram
               </Link>
             </li>
-            <li className="f-list">
+            {/* <li className="f-list">
               <Link to="" className="f-list-a">
                 <FaTelegram
                   color="#099284"
@@ -68,7 +74,7 @@ const Footer = () => {
                 />{" "}
                 New Movies Telegram
               </Link>
-            </li>
+            </li> */}
             <li className="f-list">
               <Link to="" className="f-list-a">
                 <FaTelegram
@@ -101,7 +107,7 @@ const Footer = () => {
                 Jobs Whatsapp
               </Link>
             </li>
-            <li className="f-list">
+            {/* <li className="f-list">
               <Link to="" className="f-list-a">
                 <FaWhatsappSquare
                   color="green"
@@ -110,7 +116,7 @@ const Footer = () => {
                 />{" "}
                 New Movies Whatsapp
               </Link>
-            </li>
+            </li> */}
             <li className="f-list">
               <Link to="" className="f-list-a">
                 <FaWhatsappSquare
@@ -137,12 +143,18 @@ const Footer = () => {
               </Link>
             </li>
             <li className="f-list">
-              <Link to="" className="f-list-a">
+              <Link
+                to="https://www.instagram.com/aateeshmaurya"
+                className="f-list-a"
+              >
                 <FaInstagramSquare color="orange" fontSize={"30px"} />
               </Link>
             </li>
             <li className="f-list">
-              <Link to="" className="f-list-a">
+              <Link
+                to="https://t.me/fresher_internship_jobs"
+                className="f-list-a"
+              >
                 <FaTelegram color="blue" fontSize={"30px"} />
               </Link>
             </li>

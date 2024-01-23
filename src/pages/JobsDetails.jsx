@@ -20,14 +20,12 @@ const JobsDetails = () => {
   const [postLists, setPostList] = useState();
   const postsCollectionRef = collection(db, "jobs");
   const getInternshipData = async () => {
-    const data = await getDocs(postsCollectionRef);
     const productTemp = await getDoc(doc(db, "jobs", slug));
     setPostList(productTemp.data());
   };
   useEffect(() => {
     getInternshipData();
   }, []);
-  console.log(postLists);
   return (
     <div>
       <Layout title={"Deep Known- Jobs"}>

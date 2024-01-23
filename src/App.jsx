@@ -14,6 +14,7 @@ import Internship from "./pages/Internship";
 import AdminJobs from "./pages/admin/AdminJobs";
 import JobsDetails from "./pages/JobsDetails";
 import AdminMovies from "./pages/admin/AdminMovies";
+import MoviesDetails from "./pages/MoviesDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/jobs/:slug" element={<JobsDetails />} />
         <Route path="/new-movies" element={<NewMovies />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:slug" element={<MoviesDetails />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/term-condition" element={<TermCondition />} />
         //admin access

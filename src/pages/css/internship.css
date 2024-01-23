@@ -28,6 +28,9 @@
     width: 80%;
     border-radius: 5px;
 }
+.card>img{
+    width: 10%;
+}
 @media screen and (max-width:1100px){
     .right-details{
     width: 30%;
